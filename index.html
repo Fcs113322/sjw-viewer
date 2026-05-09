@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SJW 三角网查看器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>SJW 三角网查看器</h1>
+      <label class="file-btn">
+        加载 SJW 文件
+        <input id="fileInput" type="file" accept=".sjw,.txt" multiple />
+      </label>
+
+      <section>
+        <h2>已加载数据</h2>
+        <div id="datasetList" class="dataset-list"></div>
+      </section>
+
+      <section>
+        <h2>多期对比</h2>
+        <div class="compare-row">
+          <select id="compareA"></select>
+          <span>vs</span>
+          <select id="compareB"></select>
+        </div>
+        <button id="compareBtn">计算高程差</button>
+        <div id="compareResult" class="compare-result">请选择两期数据进行对比</div>
+      </section>
+
+      <section>
+        <h2>高程着色</h2>
+        <div class="color-mode-row">
+          <label><input type="radio" name="elevColorMode" value="off" checked /> 关闭</label>
+          <label><input type="radio" name="elevColorMode" value="depth" /> 水深模式</label>
+          <label><input type="radio" name="elevColorMode" value="elevation" /> 高程模式</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>视图操作</h2>
+        <div class="view-mode-row">
+          <label><input id="topViewLock" type="checkbox" /> 锁定俯视视角</label>
+        </div>
+        <div id="threeDControls" class="three-d-controls">
+          <label>方位角(Yaw) <input id="yawRange" type="range" min="-180" max="180" value="35" /></label>
+          <label>俯仰角(Pitch) <input id="pitchRange" type="range" min="-89" max="89" value="45" /></label>
+        </div>
+        <ul>
+          <li>鼠标滚轮：缩放</li>
+          <li>左键拖动：3D旋转（俯视锁定时平移）</li>
+          <li>中键拖动：平移</li>
+          <li>双击：重置视图</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <canvas id="canvas"></canvas>
+      <div id="status" class="status">请先加载 SJW 文件</div>
+      <div id="inspect" class="inspect">未选择要素</div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
