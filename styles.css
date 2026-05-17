@@ -6,23 +6,31 @@
   --muted: #9ca3af;
   --accent: #38bdf8;
 }
+html, body {
+  height: 100%;
+}
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
   color: var(--text);
   background: var(--bg);
+  height: 100dvh;
+  overflow: hidden;
 }
 .app {
   display: grid;
   grid-template-columns: 340px 1fr;
-  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 .sidebar {
   background: var(--panel);
   border-right: 1px solid #374151;
   padding: 16px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 h1 { font-size: 20px; margin: 0 0 14px; }
 h2 { font-size: 15px; margin: 18px 0 10px; color: var(--muted); }
@@ -120,14 +128,13 @@ button { cursor: pointer; }
   color: #d1d5db;
   white-space: pre-line;
 }
-.credit {
-  position: absolute;
-  left: 98%;
-  bottom: 10px;
-  transform: translateX(-50%);
+.sidebar-credit {
+  margin-top: auto;
+  padding-top: 14px;
+  text-align: center;
   color: rgba(229, 231, 235, 0.8);
   font-size: 12px;
   letter-spacing: 0.5px;
-  pointer-events: none;
 }
 ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+
