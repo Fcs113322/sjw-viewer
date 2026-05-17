@@ -120,4 +120,15 @@ button { cursor: pointer; }
   color: #d1d5db;
   white-space: pre-line;
 }
+}
+.credit {
+  position: absolute;
+  left: 98%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  color: rgba(229, 231, 235, 0.8);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
 ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
